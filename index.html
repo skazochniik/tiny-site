@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glitch Text Animation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="container">
+    <span id="text1"></span>
+    <span id="text2"></span>
+    <span id="text3"></span>
+    <span id="text4"></span>
+    <span id="text5"></span>
+</div>
+
+<div class="image1-wrapper">
+  <img id="image1" src="https://cdn.jsdelivr.net/gh/skazochniik/imagestiny@main/image/1.jpg" alt="Today in New York pop-up shop opening day.">
+ </div>
+
+  <div id="highlight-text1">Today in New York pop-up shop opening day.</div>
+  <div id="info-text1">
+    The TINY font family was originally created over the summer of 2018 as the visual identity for an experimental retail pop-up shop in Chinatown, New York City called “Today in New York”, or TINY for short.
+</div>
+
+<img id="image2" src="https://cdn.jsdelivr.net/gh/skazochniik/imagestiny@main/image/2.gif" alt="Printing a customer’s message on a shirt.">
+  <div id="highlight-text2">Printing a customer’s message on a shirt.</div>
+  <div id="info-text2">
+    Two of the HandJet’s default typefaces, 16x10 and 7x5, were recreated into usable fonts for mocking up designs on tees and totes, respectively.
+</div>
+
+<img id="image3" src="https://cdn.jsdelivr.net/gh/skazochniik/imagestiny@main/image/3.png" alt="HandJet EBS-250 default typefaces 16x10 and 7x5 recreated as fonts.">
+<div id="highlight-text3">HandJet EBS-250 default typefaces 16x10 and 7x5 recreated as fonts.</div>
+
+<img id="image4" src="https://cdn.jsdelivr.net/gh/skazochniik/imagestiny@main/image/4.png" alt="T-shirt and tote back side mockup using 16x10 and 7x5, respectively.">
+  <div id="highlight-text4">T-shirt and tote back side mockup using 16x10 and 7x5, respectively.</div>
+  <div id="info-text3">
+    5x4, the smallest type size found in the HandJet’s software using only 5 of the 16 available print heads, was also made.
+</div>
+
+<img id="image5" src="https://cdn.jsdelivr.net/gh/skazochniik/imagestiny@main/image/5.png" alt="Instagram post showing various widths of 5x4.">
+  <div id="highlight-text5">Instagram post showing various widths of 5x4.</div>
+  <div id="info-text4">
+    TINY 5x3 is just the initial release with a long-term plan to add additional widths up to at least 5x13, and variable axes in future updates.
+</div>
+
+<img id="image6" src="https://cdn.jsdelivr.net/gh/skazochniik/imagestiny@main/image/6.jpg" alt="Getting carried away w/ excitement and forgetting to adjust the ink level for a thinner fabric.">
+<div id="highlight-text6">Getting carried away w/ excitement and forgetting to adjust the ink level for a thinner fabric.</div>
+
+<div class="buttons-wrapper">
+  <button id="runaway-btn-1" class="circle-btn">infos</button>
+  <button id="runaway-btn-2" class="circle-btn">typo</button>
+  <button id="runaway-btn-3" class="circle-btn">about</button>
+  <button id="runaway-btn-4" class="circle-btn">profil</button>
+  <button id="runaway-btn-5" class="circle-btn">fiche</button>
+</div>
+
+
+
+
+<!-- SVG фильтр -->
+  <svg id="filters">
+    <defs>
+      <filter id="threshold">
+        <feColorMatrix in="SourceGraphic" type="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140" />
+      </filter>
+    </defs>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>

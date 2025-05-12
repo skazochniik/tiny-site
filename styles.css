@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'Tiny';
+  src: url('https://cdn.jsdelivr.net/gh/skazochniik/tiny@main/fonts/TINY5x3-80.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/skazochniik/tiny@main/fonts/TINY5x3-80.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Tiny2';
+  src: url('https://cdn.jsdelivr.net/gh/skazochniik/tiny2@main/fonts/TINY5x3-40.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/skazochniik/tiny2@main/fonts/TINY5x3-40.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cirrus';
+  src: url('https://cdn.jsdelivr.net/gh/skazochniik/cirrus@main/fonts/CirrusCumulus.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tiny', sans-serif;
+  margin: 0;
+  background: rgb(38, 38, 38);
+  color: rgb(245, 247, 220);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+  top: -11%;
+  transform: none;
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1, #text2, #text3, #text4, #text5 {
+  position: absolute;   /* Абсолютное позиционирование */
+  top: 0;            /* Расстояние от верхнего края страницы */
+  left: 50%;            /* Центрирование по горизонтали */
+  transform: translateX(-50%);  /* Компенсирует смещение по горизонтали */
+  font-size: 280pt;     /* Размер шрифта */
+  text-align: center;
+  user-select: none;
+  font-family: 'Tiny', sans-serif;
+  z-index: 100;         /* Обеспечивает, чтобы текст был поверх других элементов */
+}
+
+
+
+
+
+.image1-wrapper {
+  position: relative;
+  height: 110vh; /* Сдвигаем контейнер вниз */
+  display: flex;
+  justify-content: center;
+  margin-top: 110vh; /* отступ сверху для блока */
+}
+
+#image1 {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Все изображения будут с отступами между собой */
+#image2, #image3, #image4, #image5, #image6 {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: 80px auto; /* отступы между изображениями */
+}
+
+#highlight-text1, #highlight-text2, #highlight-text3, #highlight-text4, #highlight-text5, #highlight-text6 {
+  font-family: 'Tiny2', sans-serif;
+  color: #f5f7dc;
+  margin: 40px auto;
+  font-size: clamp(30pt, 8vw, 72pt); /* адаптивный размер */
+  width: 100%;
+  text-align: center;
+}
+
+#info-text1, #info-text2, #info-text3, #info-text4 {
+  font-family: 'Cirrus', sans-serif;
+  color: #f5f7dc;
+  font-size: clamp(14pt, 2vw, 18pt);
+  line-height: 1.6;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Центрированные изображения */
+#image1, #image2, #image3, #image4, #image5, #image6 {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Сдвиг всех остальных элементов вниз с отступами */
+#highlight-text1, #info-text1,
+#highlight-text2, #info-text2,
+#highlight-text3, #info-text3,
+#highlight-text4, #info-text4,
+#highlight-text5, #info-text5,
+#highlight-text6 {
+  margin-top: 80px;
+}
+
+
+/* Эффект блюра на изображениях при наведении */
+#image1, #image2, #image3, #image4, #image5, #image6 {
+  transition: filter 0.3s ease;  /* Плавный переход */
+}
+
+#image1:hover, #image2:hover, #image3:hover, #image4:hover, #image5:hover, #image6:hover {
+  filter: blur(5px);  /* Применяем эффект блюра */
+}
+
+
+
+.buttons-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* чтобы мышь проходила сквозь контейнер */
+  z-index: 1000;
+}
+
+/* Изменение цвета кнопки при наведении */
+.circle-btn:hover {
+  background-color: #fae64f;
+  color: #333; /* Это цвет текста на кнопке при наведении */
+}
+
+
+/* Кнопки */
+.circle-btn {
+  font-family: 'Tiny2', sans-serif;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  color: #f5f7dc;
+  border: none;
+  border-radius: 50%;
+  font-size: 30pt;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 100px;
+  transition: left 0.4s ease, top 0.4s ease;
+
+  position: absolute;
+  pointer-events: auto; /* а кнопки реагируют */
+}
+
+/* Кнопки: изначальные позиции */
+#runaway-btn-1 { top: 10%; left: 20%; }
+#runaway-btn-2 { top: 6%;  left: 70%; }
+#runaway-btn-3 { top: 20%; left: 62%; }
+#runaway-btn-4 { top: 65%; left: 10%; }
+#runaway-btn-5 { top: 80%; left: 85%; }
+
+/* Адаптация кнопок на маленьких экранах */
+@media (max-width: 768px) {
+  .circle-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 18pt;
+    line-height: 70px;
+  }
+}
