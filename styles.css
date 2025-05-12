@@ -58,16 +58,19 @@ body {
 
 .image1-wrapper {
   position: relative;
-  height: 110vh; /* Сдвигаем контейнер вниз */
   display: flex;
   justify-content: center;
+  align-items: center;  /* Центрирование изображения по вертикали */
   margin-top: 110vh; /* отступ сверху для блока */
+  height: 120vh; /* Даем контейнеру фиксированную высоту */
 }
 
 #image1 {
   max-width: 90%;
   height: auto;
+  object-fit: contain;  /* Это позволит изображению масштабироваться, сохраняя пропорции */
 }
+
 
 /* Все изображения будут с отступами между собой */
 #image2, #image3, #image4, #image5, #image6 {
