@@ -10,10 +10,6 @@
        url('https://cdn.jsdelivr.net/gh/skazochniik/tiny2@main/fonts/TINY5x3-40.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Cirrus';
-  src: url('https://cdn.jsdelivr.net/gh/skazochniik/cirrus@main/fonts/CirrusCumulus.woff') format('woff');
-}
 
 * {
   box-sizing: border-box;
@@ -41,93 +37,155 @@ body {
 }
 
 #text1, #text2, #text3, #text4, #text5 {
-  position: absolute;   /* Абсолютное позиционирование */
-  top: 0;            /* Расстояние от верхнего края страницы */
-  left: 50%;            /* Центрирование по горизонтали */
-  transform: translateX(-50%);  /* Компенсирует смещение по горизонтали */
-  font-size: 280pt;     /* Размер шрифта */
-  text-align: center;
-  user-select: none;
-  font-family: 'Tiny', sans-serif;
-  z-index: 100;         /* Обеспечивает, чтобы текст был поверх других элементов */
+   position: absolute;   
+   top: 0;            
+   left: 50%;         
+   transform: translateX(-50%);
+   font-size: 280pt;  
+   text-align: center;
+   user-select: none;
+   font-family: 'Tiny', sans-serif;
+   z-index: 100;   
+   white-space: nowrap; 
+  
+ }
+ #text1 {
+  opacity: 0;
 }
-
 
 
 
 
 .image1-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;  /* Центрирование изображения по вертикали */
-  margin-top: 110vh; /* отступ сверху для блока */
-  height: 120vh; /* Даем контейнеру фиксированную высоту */
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 110vh;
+   height: 120vh; 
+ }
+
+ #image1 {
+   max-width: 90%;
+   height: auto;
+   object-fit: contain;
+ }
+
+
+ #image2, #image3, #image4, 
+ #image5, #image6 {
+   display: block;
+   max-width: 90%;
+   height: auto;
+   margin: 80px auto;
+ }
+
+ #highlight-text1, #highlight-text2, 
+ #highlight-text3, #highlight-text4, 
+ #highlight-text5, #highlight-text6 {
+   font-family: 'Tiny2', sans-serif;
+   color: #f5f7dc;
+   margin: 40px auto;
+   font-size: clamp(30pt, 8vw, 72pt); 
+   width: 100%;
+   text-align: center;
+ }
+
+ #info-text1, #info-text2, 
+ #info-text3, #info-text4 {
+   font-family: 'Tiny2', sans-serif;
+   color: #f5f7dc;
+   font-size: 32pt;
+   line-height: 1.6;
+   max-width: 800px;
+   padding: 20px;
+   text-align: center;
+   margin: 0 auto;
+ }
+
+ #image1, #image2, #image3, 
+ #image4, #image5, #image6 {
+   display: block;
+   max-width: 90%;
+   height: auto;
+   margin: 0 auto;
+ }
+
+
+ #highlight-text1, #info-text1,
+ #highlight-text2, #info-text2,
+ #highlight-text3, #info-text3,
+ #highlight-text4, #info-text4,
+ #highlight-text5, #info-text5,
+ #highlight-text6 {
+   margin-top: 80px;
+ }
+
+
+
+ #image1, #image2, #image3, 
+ #image4, #image5, #image6 {
+   transition: filter 0.3s ease; 
+ }
+
+ #image1:hover, #image2:hover, 
+ #image3:hover, #image4:hover, 
+ #image5:hover, #image6:hover {
+   filter: blur(5px);
 }
 
-#image1 {
-  max-width: 90%;
-  height: auto;
-  object-fit: contain;  /* Это позволит изображению масштабироваться, сохраняя пропорции */
+
+#new-view {
+   font-family: 'Tiny2', sans-serif;
+   color: #f5f7dc;
+   font-size: 50px;
+   line-height: 1;
+   max-width: 1500px;
+   padding: 20px;
+   text-align: left;
+   margin: -4% auto 0 auto;
+   display: none;
+   transition: opacity 0.5s ease;
+ }
+
+ .letter {
+   display: inline-block;
+   will-change: transform, opacity;
+   cursor: default;
+
+   padding: 10px;  
+   margin: -10px;
+ }
+
+ #new-view:hover .letter {
+   transform: translate(
+    calc(-10px + 20px * random()), 
+    calc(-10px + 20px * random())
+  );
 }
 
+#back-btn {
+   position: absolute;
+   top: 80%;
+   left: 2%;
 
-/* Все изображения будут с отступами между собой */
-#image2, #image3, #image4, #image5, #image6 {
-  display: block;
-  max-width: 90%;
-  height: auto;
-  margin: 80px auto; /* отступы между изображениями */
+   color: #f5f7dc;
+   border: none;
+   border-radius: 50px;
+   font-size: 30pt;
+   display: flex;
+  
+   align-items: center; 
+  
+
+
+   transition: background-color 0.3s ease;
+ }
+
+ #back-btn:hover {
+   background-color: #fae64f;
+   color: #333;
 }
-
-#highlight-text1, #highlight-text2, #highlight-text3, #highlight-text4, #highlight-text5, #highlight-text6 {
-  font-family: 'Tiny2', sans-serif;
-  color: #f5f7dc;
-  margin: 40px auto;
-  font-size: clamp(30pt, 8vw, 72pt); /* адаптивный размер */
-  width: 100%;
-  text-align: center;
-}
-
-#info-text1, #info-text2, #info-text3, #info-text4 {
-  font-family: 'Cirrus', sans-serif;
-  color: #f5f7dc;
-  font-size: clamp(14pt, 2vw, 18pt);
-  line-height: 1.6;
-  max-width: 800px;
-  padding: 20px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-/* Центрированные изображения */
-#image1, #image2, #image3, #image4, #image5, #image6 {
-  display: block;
-  max-width: 90%;
-  height: auto;
-  margin: 0 auto;
-}
-
-/* Сдвиг всех остальных элементов вниз с отступами */
-#highlight-text1, #info-text1,
-#highlight-text2, #info-text2,
-#highlight-text3, #info-text3,
-#highlight-text4, #info-text4,
-#highlight-text5, #info-text5,
-#highlight-text6 {
-  margin-top: 80px;
-}
-
-
-/* Эффект блюра на изображениях при наведении */
-#image1, #image2, #image3, #image4, #image5, #image6 {
-  transition: filter 0.3s ease;  /* Плавный переход */
-}
-
-#image1:hover, #image2:hover, #image3:hover, #image4:hover, #image5:hover, #image6:hover {
-  filter: blur(5px);  /* Применяем эффект блюра */
-}
-
 
 
 .buttons-wrapper {
@@ -136,48 +194,42 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* чтобы мышь проходила сквозь контейнер */
+  pointer-events: none;
   z-index: 1000;
 }
 
-/* Изменение цвета кнопки при наведении */
-.circle-btn:hover {
-  background-color: #fae64f;
-  color: #333; /* Это цвет текста на кнопке при наведении */
-}
-
-
-/* Кнопки */
 .circle-btn {
-  font-family: 'Tiny2', sans-serif;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: #333;
-  color: #f5f7dc;
-  border: none;
-  border-radius: 50%;
-  font-size: 30pt;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 100px;
-  transition: left 0.4s ease, top 0.4s ease;
+   font-family: 'Tiny2', sans-serif;
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   background-color: #333;
+   color: #f5f7dc;
+   border: none;
+   border-radius: 50%;
+   font-size: 30pt;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   transition: left 0.4s ease, top 0.4s ease;
 
-  position: absolute;
-  pointer-events: auto; /* а кнопки реагируют */
-}
+   position: absolute;
+   pointer-events: auto; 
+  }
 
-/* Кнопки: изначальные позиции */
-#runaway-btn-1 { top: 10%; left: 20%; }
-#runaway-btn-2 { top: 6%;  left: 70%; }
-#runaway-btn-3 { top: 20%; left: 62%; }
+ .circle-btn:hover {
+   background-color: #fae64f;
+   color: #333; 
+ }
+
+
+ #runaway-btn-1 { top: 10%; left: 20%; }
+ #runaway-btn-2 { top: 6%;  left: 70%; }
+ #runaway-btn-3 { top: 20%; left: 62%; }
 #runaway-btn-4 { top: 65%; left: 10%; }
-#runaway-btn-5 { top: 80%; left: 85%; }
 
-/* Адаптация кнопок на маленьких экранах */
+
 @media (max-width: 768px) {
   .circle-btn {
     width: 70px;
